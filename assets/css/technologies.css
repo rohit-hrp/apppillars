@@ -1,0 +1,14 @@
+.technologies-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.technologies-list li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.technologies-list li::before {
+    content: "• ";
+    color: #007bff; /* Change this color as needed */
+}

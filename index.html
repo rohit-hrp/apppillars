@@ -27,6 +27,450 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom CSS Animations & Enhancements -->
+  <style>
+    /* ===== Global Animations ===== */
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    /* ===== Hero Section Enhancements ===== */
+    #hero h1 {
+      animation: slideUpFade 0.8s ease-out !important;
+    }
+
+    #hero p {
+      animation: slideUpFade 0.8s ease-out 0.2s backwards !important;
+    }
+
+    .hero-img {
+      animation: scaleIn 1s ease-out 0.4s backwards !important;
+    }
+
+    /* ===== Card Hover Effects ===== */
+    .card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(102, 126, 234, 0.15);
+      border-top: 3px solid #667eea;
+    }
+
+    .card img {
+      border-radius: 12px 12px 0 0;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card h3 {
+      color: #333;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .card:hover h3 {
+      color: #667eea;
+    }
+
+    /* ===== Service Items Enhancement ===== */
+    .service-item {
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .service-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2);
+    }
+
+    .service-item .icon {
+      font-size: 3rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .service-item:hover .icon {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    .service-item h3 {
+      color: #333;
+      font-size: 1.15rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .service-item:hover h3 {
+      color: #667eea;
+    }
+
+    /* ===== Feature Box Enhancement ===== */
+    .feature-box {
+      padding: 20px 0;
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+    }
+
+    .feature-box:hover {
+      border-left-color: #667eea;
+      padding-left: 10px;
+    }
+
+    .feature-box i {
+      color: #667eea;
+      font-size: 1.5rem;
+      margin-right: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-box:hover i {
+      transform: scale(1.2);
+    }
+
+    .feature-box h3 {
+      color: #333;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .feature-box:hover h3 {
+      color: #667eea;
+    }
+
+    /* ===== Icon Box Enhancement ===== */
+    .icon-box {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .icon-box:hover {
+      transform: translateX(8px);
+      border-left-color: #667eea;
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+    }
+
+    .icon-box i {
+      font-size: 2rem;
+      color: #667eea;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .icon-box:hover i {
+      transform: scale(1.15) rotate(-10deg);
+      color: #764ba2;
+    }
+
+    .icon-box h4 {
+      color: #333;
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .icon-box:hover h4 {
+      color: #667eea;
+    }
+
+    .icon-box p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ===== Stats Item Enhancement ===== */
+    .stats-item {
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+
+    .stats-item:hover {
+      background: white;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+    }
+
+    .stats-item i {
+      font-size: 2.5rem;
+      transition: transform 0.3s ease;
+      margin-right: 20px;
+    }
+
+    .stats-item:hover i {
+      transform: scale(1.2);
+    }
+
+    .stats-item span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #667eea;
+      display: block;
+    }
+
+    .stats-item p {
+      color: #666;
+      font-weight: 500;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* ===== Button Enhancements ===== */
+    .btn-get-started, .btn-read-more {
+      transition: all 0.3s ease !important;
+      border-radius: 50px !important;
+      font-weight: 600;
+      padding: 12px 30px !important;
+    }
+
+    .btn-get-started:hover, .btn-read-more:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+    }
+
+    .btn-read-more i {
+      transition: transform 0.3s ease;
+      margin-left: 8px;
+    }
+
+    .btn-read-more:hover i {
+      transform: translateX(5px);
+    }
+
+    /* ===== Section Title Enhancements ===== */
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+
+    .section-title p {
+      color: #666;
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+
+    /* ===== About Section Content ===== */
+    #about .content h3 {
+      color: #667eea;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    #about .content h2 {
+      color: #333;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    #about .content p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    #about img {
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    #about img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2);
+    }
+
+    /* ===== Tech Table Enhancement ===== */
+    .tech-table {
+      border-collapse: collapse;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .tech-table thead {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .tech-table th {
+      padding: 18px;
+      font-weight: 600;
+      text-align: left;
+      font-size: 1rem;
+    }
+
+    .tech-table td {
+      padding: 15px 18px;
+      border-bottom: 1px solid #e9ecef;
+      color: #333;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .tech-table tbody tr:hover {
+      background: rgba(102, 126, 234, 0.05);
+      transform: scale(1.01);
+    }
+
+    .tech-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ===== Smooth Transitions ===== */
+    * {
+      scroll-behavior: smooth;
+    }
+
+    /* ===== Text Selection ===== */
+    ::selection {
+      background: #667eea;
+      color: white;
+    }
+
+    ::-moz-selection {
+      background: #667eea;
+      color: white;
+    }
+
+    /* ===== Heading Animations ===== */
+    h1, h2, h3, h4, h5, h6 {
+      transition: color 0.3s ease;
+    }
+
+    /* ===== Contact Form Enhancements ===== */
+    .form-control {
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      padding: 12px 16px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .form-control:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+
+    .form-control::placeholder {
+      color: #999;
+    }
+
+    /* ===== Info Items Enhancement ===== */
+    .info-item {
+      padding: 25px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+
+    .info-item:hover {
+      background: white;
+      border-left-color: #667eea;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.12);
+    }
+
+    .info-item i {
+      font-size: 2rem;
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+
+    .info-item h3 {
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .info-item p {
+      color: #666;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -45,7 +489,8 @@
           <li><a href="#hero" class="active">Home<br></a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="#technologies-expertise">Technologies</a></li>
           <!-- <li><a href="#team">Team</a></li> -->
           <!-- <li><a href="blog.html">Blog</a></li> -->
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -107,17 +552,17 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
+    <section id="hero" class="hero section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 120px 0;">
 
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <h1 data-aos="fade-up">We offer modern solutions for growing your business</h1>
-            <p data-aos="fade-up" data-aos-delay="100">We are team of talented making websites with Bootstrap</p>
-            <!-- <div class="d-flex flex-column flex-md-row" data-aos="fade-up" data-aos-delay="200">
-              <a href="#about" class="btn-get-started">Get Started <i class="bi bi-arrow-right"></i></a>
-              <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center justify-content-center ms-0 ms-md-4 mt-4 mt-md-0"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-            </div> -->
+            <h1 data-aos="fade-up" style="font-size: 3.2rem; font-weight: 700; margin-bottom: 20px; color: white; line-height: 1.3;">We Offer Modern Solutions For Growing Your Business</h1>
+            <p data-aos="fade-up" data-aos-delay="100" style="font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 30px;">Empowering startups and enterprises with cutting-edge technology solutions tailored to drive innovation and sustainable growth.</p>
+            <div class="d-flex flex-column flex-md-row gap-3" data-aos="fade-up" data-aos-delay="200">
+              <a href="#about" class="btn btn-light" style="border-radius: 50px; padding: 14px 40px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #333; transition: all 0.3s ease;">Get Started <i class="bi bi-arrow-right"></i></a>
+              <a href="#contact" class="btn btn-outline-light" style="border-radius: 50px; padding: 14px 40px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: white; border: 2px solid white; transition: all 0.3s ease;"><i class="bi bi-phone"></i>Contact Us</a>
+            </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out">
             <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
@@ -128,17 +573,20 @@
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section" style="background: #ffffff;">
 
       <div class="container" data-aos="fade-up">
         <div class="row gx-0">
 
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-10 mx-auto d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
               <h3>Who We Are</h3>
               <h2>Empowering Startups with Cutting-Edge Technology Solutions, Delivering Seamless and Scalable Digital Experiences</h2>
               <p>
-                We are an agile IT company dedicated to empowering startups with robust web services and cutting-edge technology solutions. Our mission is to provide seamless, scalable, and efficient digital experiences tailored to meet the unique needs of emerging businesses. Specializing in web development and API services, our expertise spans multiple frameworks and technologies, enabling us to deliver high-quality, performant, and user-centric applications.
+                Apppillars Technology Consulting Private Limited is a dynamic, forward-thinking IT company dedicated to empowering startups and enterprises with robust web services and cutting-edge technology solutions. We specialize in transforming business challenges into innovative opportunities through high-quality, performant, and user-centric digital experiences.
+              </p>
+              <p>
+                Our mission is simple yet powerful: to provide seamless, scalable, and efficient digital solutions tailored to meet the unique needs of growing businesses. With deep expertise spanning multiple frameworks and technologies, we deliver comprehensive end-to-end solutions that drive measurable business impact and sustainable growth.
               </p>
               <div class="text-center text-lg-start">
                 <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
@@ -149,17 +597,13 @@
             </div>
           </div>
 
-          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-
         </div>
       </div>
 
     </section><!-- /About Section -->
 
     <!-- Values Section -->
-    <section id="values" class="values section">
+    <section id="values" class="values section" style="background: #f0f4ff;">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -202,7 +646,7 @@
     </section><!-- /Values Section -->
 
     <!-- Stats Section -->
-    <section id="stats" class="stats section">
+    <section id="stats" class="stats section" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(117, 75, 162, 0.1) 100%);">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -255,12 +699,12 @@
     </section><!-- /Stats Section -->
 
     <!-- Features Section -->
-    <section id="features" class="features section">
+    <section id="features" class="features section" style="background: #ffffff;">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Features</h2>
-        <p>Our Advacedd Features<br></p>
+        <p>Our Advanced Features<br></p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -326,7 +770,7 @@
     </section><!-- /Features Section -->
 
     <!-- Alt Features Section -->
-    <section id="alt-features" class="alt-features section">
+    <section id="alt-features" class="alt-features section" style="background: #f0f4ff;">
 
       <div class="container">
 
@@ -399,77 +843,540 @@
     </section><!-- /Alt Features Section -->
 
     <!-- Services Section -->
-    <section id="services" class="services section">
+    <section id="services" class="services section" style="background: #ffffff;">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Services</h2>
-        <p>Check Our Services<br></p>
+        <p>Comprehensive End-to-End Technology Solutions</p>
       </div><!-- End Section Title -->
 
       <div class="container">
 
-        <div class="row gy-4">
+        <style>
+          .services-slider {
+            position: relative;
+            padding-bottom: 70px;
+          }
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item item-cyan position-relative">
-              <i class="bi bi-activity icon"></i>
-              <h3>Custom Web Application Development</h3>
-              <p>We provide end-to-end custom web application development services tailored to the unique needs of your startup. Utilizing frameworks such as Django, Flask, and FastAPI, we build secure, scalable, and high-performance web applications. From concept and design to development and deployment, our comprehensive approach ensures a seamless and efficient development process, delivering solutions that drive business growth and enhance user engagement.</p>
-              <!-- <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a> -->
-            </div>
-          </div><!-- End Service Item -->
+          .services-slider .swiper-slide {
+            height: auto;
+            display: flex;
+          }
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item item-orange position-relative">
-              <i class="bi bi-broadcast icon"></i>
-              <h3>API Development and Integration</h3>
-              <p>Our API development and integration services enable seamless communication between various software systems. We specialize in creating robust, scalable, and secure APIs that facilitate data exchange and functionality extension. Whether you need custom APIs, third-party API integration, or optimization of existing APIs, our solutions ensure smooth interoperability and enhanced operational efficiency, empowering your startup to leverage the full potential of interconnected systems.</p>
-              <!-- <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a> -->
-            </div>
-          </div><!-- End Service Item -->
+          .services-slider .service-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            padding: 30px !important;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid transparent;
+          }
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-teal position-relative">
-              <i class="bi bi-easel icon"></i>
-              <h3>Dynamic Front-End Development</h3>
-              <p>We offer dynamic front-end development services using React.js to create interactive and responsive user interfaces. Our expertise in building component-based UIs ensures consistency, reusability, and high performance across your web applications. By focusing on user experience and visual appeal, we deliver front-end solutions that engage users and provide a seamless, intuitive interaction with your digital products.</p>
-              <!-- <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a> -->
-            </div>
-          </div><!-- End Service Item -->
+          .services-slider .service-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2);
+            border-left-color: #667eea;
+          }
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item item-red position-relative">
-              <i class="bi bi-bounding-box-circles icon"></i>
-              <h3>Rapid Prototyping and MVP Development</h3>
-              <p>For startups looking to quickly validate their ideas, our rapid prototyping and Minimum Viable Product (MVP) development services are ideal. Leveraging the flexibility and speed of frameworks like Flask, we develop prototypes and MVPs that allow you to test your concepts in the market with minimal investment. This iterative approach helps you gather valuable feedback, refine your product, and accelerate time-to-market.</p>
-              <!-- <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a> -->
-            </div>
-          </div><!-- End Service Item -->
+          .services-slider .service-item .icon {
+            font-size: 2.8rem;
+            color: #667eea;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+          }
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item item-indigo position-relative">
-              <i class="bi bi-calendar4-week icon"></i>
-              <h3>Scalable Cloud Solutions</h3>
-              <p>We offer scalable cloud solutions that ensure your web applications can handle varying traffic loads and grow with your business. Utilizing cloud platforms and services, we design and implement infrastructure that is resilient, secure, and cost-effective. Our cloud solutions include everything from deployment and hosting to monitoring and maintenance, ensuring that your applications are always available and performing optimally.</p>
-              <!-- <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a> -->
-            </div>
-          </div><!-- End Service Item -->
+          .services-slider .service-item:hover .icon {
+            transform: scale(1.1) rotate(5deg);
+            color: #764ba2;
+          }
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item item-pink position-relative">
-              <i class="bi bi-chat-square-text icon"></i>
-              <h3>Ongoing Support and Maintenance</h3>
-              <p>Our commitment to your success extends beyond the initial development phase with our ongoing support and maintenance services. We provide regular updates, performance monitoring, bug fixing, and feature enhancements to ensure your web applications remain secure, up-to-date, and fully functional. Our proactive support helps you avoid potential issues, optimize performance, and adapt to evolving business needs, ensuring long-term success and reliability for your digital products.</p>
-              <!-- <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a> -->
-            </div>
-          </div><!-- End Service Item -->
+          .services-slider .service-item h3 {
+            color: #333;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+            margin-top: 0;
+          }
+
+          .services-slider .service-item:hover h3 {
+            color: #667eea;
+          }
+
+          .services-slider .service-item p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            flex-grow: 1;
+            margin-bottom: 0;
+            text-align: left;
+          }
+
+          .services-slider .service-item:hover p {
+            color: #555;
+          }
+
+          .services-slider .swiper-button-prev,
+          .services-slider .swiper-button-next {
+            position: absolute;
+            bottom: 10px;
+            top: auto;
+            width: 45px;
+            height: 45px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #667eea;
+            transition: all 0.3s ease;
+            z-index: 10;
+          }
+
+          .services-slider .swiper-button-prev:hover,
+          .services-slider .swiper-button-next:hover {
+            background: #667eea;
+            color: white;
+          }
+
+          .services-slider .swiper-button-prev {
+            left: 50%;
+            transform: translateX(-60px);
+          }
+
+          .services-slider .swiper-button-next {
+            right: 50%;
+            transform: translateX(60px);
+          }
+
+          .services-slider .swiper-pagination {
+            bottom: -50px;
+          }
+
+          .services-slider .swiper-pagination-bullet {
+            background: #667eea;
+            opacity: 0.5;
+          }
+
+          .services-slider .swiper-pagination-bullet-active {
+            background: #667eea;
+            opacity: 1;
+          }
+        </style>
+
+        <div class="swiper init-swiper services-slider">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": 1,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "navigation": {
+                "nextEl": ".services-slider-next",
+                "prevEl": ".services-slider-prev"
+              },
+              "breakpoints": {
+                "640": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 20
+                },
+                "1024": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 30
+                }
+              }
+            }
+          </script>
+
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item position-relative">
+                <i class="bi bi-activity icon"></i>
+                <h3>Custom Web Application Development</h3>
+                <p>We provide end-to-end custom web application development services tailored to your startup. Utilizing Django, Flask, and FastAPI, we build secure, scalable, and high-performance web applications tailored to drive innovation.</p>
+              </div>
+            </div><!-- End Service Item -->
+
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-item position-relative">
+                <i class="bi bi-broadcast icon"></i>
+                <h3>API Development and Integration</h3>
+                <p>Our API development and integration services enable seamless communication between various software systems. We specialize in creating robust, scalable, and secure APIs that facilitate smooth interoperability.</p>
+              </div>
+            </div><!-- End Service Item -->
+
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-item position-relative">
+                <i class="bi bi-easel icon"></i>
+                <h3>Dynamic Front-End Development</h3>
+                <p>We leverage React.js to create dynamic, interactive interfaces that elevate user experience with reusable components. Our expertise ensures your applications are both functional and engaging with responsive design.</p>
+              </div>
+            </div><!-- End Service Item -->
+
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="400">
+              <div class="service-item position-relative">
+                <i class="bi bi-bounding-box-circles icon"></i>
+                <h3>Rapid Prototyping and MVP Development</h3>
+                <p>For startups looking to quickly validate ideas, our rapid prototyping and MVP development services are ideal. We develop prototypes that allow you to test concepts in the market with minimal investment.</p>
+              </div>
+            </div><!-- End Service Item -->
+
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="500">
+              <div class="service-item position-relative">
+                <i class="bi bi-calendar4-week icon"></i>
+                <h3>Scalable Cloud Solutions</h3>
+                <p>We offer scalable cloud solutions ensuring your web applications handle varying traffic loads and grow with your business. Our infrastructure is resilient, secure, and cost-effective with deployment and monitoring.</p>
+              </div>
+            </div><!-- End Service Item -->
+
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="600">
+              <div class="service-item position-relative">
+                <i class="bi bi-chat-square-text icon"></i>
+                <h3>Ongoing Support and Maintenance</h3>
+                <p>Our commitment extends beyond development with ongoing support and maintenance services. We provide regular updates, performance monitoring, bug fixing, and feature enhancements to ensure stability and success.</p>
+              </div>
+            </div><!-- End Service Item -->
+
+          </div>
+
+          <div class="swiper-pagination"></div>
+
+          <button class="swiper-button-prev services-slider-prev"><i class="bi bi-chevron-left"></i></button>
+          <button class="swiper-button-next services-slider-next"><i class="bi bi-chevron-right"></i></button>
 
         </div>
 
       </div>
 
     </section><!-- /Services Section -->
+
+    <!-- Technologies & Expertise Section -->
+    <section class="technologies-expertise" id="technologies-expertise" style="background: #f0f4ff;">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Technologies & Expertise</h2>
+        <p>Our Proficiencies & Capabilities</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <style>
+          .tech-slider {
+            position: relative;
+            padding-bottom: 70px;
+          }
+
+          .tech-slider .swiper-slide {
+            height: auto;
+            display: flex;
+          }
+
+          .tech-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            border-top: 4px solid #667eea;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .tech-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2);
+            border-top-color: #764ba2;
+          }
+
+          .tech-card-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+          }
+
+          .tech-card:hover .tech-card-icon {
+            color: #764ba2;
+            transform: scale(1.1) rotate(5deg);
+          }
+
+          .tech-card h3 {
+            color: #333;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+          }
+
+          .tech-card:hover h3 {
+            color: #667eea;
+          }
+
+          .tech-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+          }
+
+          .tech-items li {
+            padding: 10px 0;
+            color: #666;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            padding-left: 25px;
+            transition: all 0.3s ease;
+          }
+
+          .tech-items li:last-child {
+            border-bottom: none;
+          }
+
+          .tech-items li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+          }
+
+          .tech-card:hover .tech-items li:before {
+            color: #764ba2;
+            left: 5px;
+          }
+
+          .tech-items li:hover {
+            color: #667eea;
+            padding-left: 30px;
+          }
+
+          .tech-slider .swiper-button-prev,
+          .tech-slider .swiper-button-next {
+            position: absolute;
+            bottom: 10px;
+            top: auto;
+            width: 45px;
+            height: 45px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #667eea;
+            transition: all 0.3s ease;
+            z-index: 10;
+          }
+
+          .tech-slider .swiper-button-prev:hover,
+          .tech-slider .swiper-button-next:hover {
+            background: #667eea;
+            color: white;
+          }
+
+          .tech-slider .swiper-button-prev {
+            left: 50%;
+            transform: translateX(-60px);
+          }
+
+          .tech-slider .swiper-button-next {
+            right: 50%;
+            transform: translateX(60px);
+          }
+
+          .tech-slider .swiper-pagination {
+            bottom: -50px;
+          }
+
+          .tech-slider .swiper-pagination-bullet {
+            background: #667eea;
+            opacity: 0.5;
+          }
+
+          .tech-slider .swiper-pagination-bullet-active {
+            background: #667eea;
+            opacity: 1;
+          }
+
+          @media (max-width: 768px) {
+            .tech-card {
+              padding: 20px;
+            }
+
+            .tech-card-icon {
+              font-size: 2.5rem;
+            }
+
+            .tech-card h3 {
+              font-size: 1.1rem;
+            }
+
+            .tech-items li {
+              font-size: 0.9rem;
+              padding: 8px 0;
+              padding-left: 20px;
+            }
+          }
+        </style>
+
+        <div class="swiper init-swiper tech-slider">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": 1,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "navigation": {
+                "nextEl": ".tech-slider-next",
+                "prevEl": ".tech-slider-prev"
+              },
+              "breakpoints": {
+                "640": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 20
+                },
+                "1024": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 30
+                }
+              }
+            }
+          </script>
+
+          <div class="swiper-wrapper">
+
+            <!-- Languages & Platforms -->
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
+              <div class="tech-card">
+                <i class="bi bi-code-slash tech-card-icon"></i>
+                <h3>Languages & Platforms</h3>
+                <ul class="tech-items">
+                  <li>Python</li>
+                  <li>Data Processing</li>
+                  <li>Databricks</li>
+                  <li>Workflow Automation</li>
+                  <li>AWS Cloud Services</li>
+                  <li>React.js</li>
+                  <li>PHP</li>
+                  <li>Angular</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
+              <div class="tech-card">
+                <i class="bi bi-database tech-card-icon"></i>
+                <h3>Databases</h3>
+                <ul class="tech-items">
+                  <li>PostgreSQL</li>
+                  <li>MySQL</li>
+                  <li>Oracle Database</li>
+                  <li>MongoDB</li>
+                  <li>Redis</li>
+                  <li>Elasticsearch</li>
+                  <li>Neo4j</li>
+                  <li>DynamoDB</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Frameworks & CMS -->
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="300">
+              <div class="tech-card">
+                <i class="bi bi-hammer tech-card-icon"></i>
+                <h3>Frameworks & CMS</h3>
+                <ul class="tech-items">
+                  <li>Django</li>
+                  <li>Flask</li>
+                  <li>FastAPI</li>
+                  <li>CakePHP</li>
+                  <li>Laravel</li>
+                  <li>WordPress</li>
+                  <li>Magento</li>
+                  <li>OpenCart</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- AI & ML -->
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="400">
+              <div class="tech-card">
+                <i class="bi bi-robot tech-card-icon"></i>
+                <h3>AI & ML</h3>
+                <ul class="tech-items">
+                  <li>NLP & Text Processing</li>
+                  <li>Computer Vision</li>
+                  <li>TensorFlow & PyTorch</li>
+                  <li>Data Science & Analytics</li>
+                  <li>Scikit-Learn</li>
+                  <li>OpenAI API</li>
+                  <li>Hugging Face</li>
+                  <li>Pandas</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Cloud Computing -->
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="500">
+              <div class="tech-card">
+                <i class="bi bi-cloud-check tech-card-icon"></i>
+                <h3>Cloud Computing</h3>
+                <ul class="tech-items">
+                  <li>Amazon Web Services</li>
+                  <li>AWS CodePipeline</li>
+                  <li>AWS CodeDeploy</li>
+                  <li>GitHub Actions</li>
+                  <li>Docker</li>
+                  <li>Kubernetes</li>
+                  <li>Jenkins</li>
+                  <li>GitLab CI</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="swiper-pagination"></div>
+
+          <button class="swiper-button-prev tech-slider-prev"><i class="bi bi-chevron-left"></i></button>
+          <button class="swiper-button-next tech-slider-next"><i class="bi bi-chevron-right"></i></button>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Technologies & Expertise Section -->
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing section" style="display: none;">
@@ -1218,12 +2125,12 @@
     </section><!-- /Recent Posts Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(117, 75, 162, 0.05) 100%);">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Contact Us</p>
+        <h2>Get In Touch</h2>
+        <p>Let's Start Your Digital Transformation Journey</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -1246,7 +2153,7 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                   <i class="bi bi-telephone"></i>
                   <h3>Call Us</h3>
-                  <p>+91 xxx-xxx-xxxx</p>
+                  <p>+91 8750765874</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1254,7 +2161,7 @@
                 <div class="info-item" data-aos="fade" data-aos-delay="400">
                   <i class="bi bi-envelope"></i>
                   <h3>Email Us</h3>
-                  <p>info@apppillars.com</p>
+                  <p>apppillars@gmail.com</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1339,8 +2246,8 @@
           <div class="footer-contact pt-3">
             <p>Noida, Sector - 62</p>
             <p>India, 201301</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+91 -xxx-xxx-xxxx</span></p>
-            <p><strong>Email:</strong> <span>info@apppillars.com</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+91 8750765874</span></p>
+            <p><strong>Email:</strong> <span>apppillars@gmail.com</span></p>
           </div>
         </div>
 
