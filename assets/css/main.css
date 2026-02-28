@@ -983,7 +983,7 @@ section,
 .values .card {
   background-color: var(--surface-color);
   color: var(--default-color);
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: 0.3s;
